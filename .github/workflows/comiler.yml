@@ -34,6 +34,10 @@ jobs:
        - name: Initializing environment
          run: |
             sudo -E apt-get -qq update
-
+            sudo -E apt-get -qq install wget
+            wget https://raw.githubusercontent.com/akhilnarang/scripts/master/setup/android_build_env.sh
+            bash android_build_env.sh
+       - name: Cloning repo
          run: |
             git clone https://github.com/PixelExperience-Devices/kernel_xiaomi_rosy --branch=ten --depth=1
+            cd kernel_xiaomi_rosy
