@@ -14,8 +14,10 @@ on:
   
 watch:
     types: [started]
-    env:
+    
+env:
   dir: echo
+
 jobs:
   build:
     runs-on: ubuntu-latest
