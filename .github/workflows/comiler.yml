@@ -13,8 +13,11 @@ on:
 #    - cron: 0 8 * * 5
   watch:
     types: [started]
-    env:
-  CHECK: echo
+    
+
+env:
+  TZ: Asia/Kolkata
+
 jobs:
   build:
     runs-on: ubuntu-latest
