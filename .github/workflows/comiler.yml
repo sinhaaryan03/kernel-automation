@@ -37,7 +37,7 @@ jobs:
        - name: Initializing environment
          run: |
             sudo -E apt-get -qq update
-            sudo apt-get -y update && apt-get -y upgrade && apt-get -y install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex bison
+            sudo -E apt-get -qq install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex bison
        - name: Cloning repo
          run: |
             git clone https://github.com/PixelExperience-Devices/kernel_xiaomi_rosy --branch=ten --depth=1
