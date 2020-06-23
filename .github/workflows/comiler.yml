@@ -41,4 +41,11 @@ jobs:
        - name: Cloning repo
          run: |
             git clone https://github.com/PixelExperience-Devices/kernel_xiaomi_rosy --branch=ten --depth=1
+       - name: Compiling Kernel
+         run: |
             cd kernel_xiaomi_rosy
+            git clone https://github.com/Pulkit077/aarch64-linux-android-4.9.git --depth=1
+            CROSS_COMPILE+="aarch64-linux-android-4.9/bin/aarch64-linux-android-"
+            export CROSS_COMPILE
+            make rosy-perf_defconfig
+            make -j8
