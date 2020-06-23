@@ -34,3 +34,6 @@ jobs:
        - name: Initializing environment
          run: |
             sudo -E apt-get -qq update
+
+         run: |
+            git clone https://github.com/PixelExperience-Devices/kernel_xiaomi_rosy --branch=ten --depth=1
