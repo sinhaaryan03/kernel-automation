@@ -11,13 +11,10 @@ on:
 #      - '.config'
 #  schedule:
 #    - cron: 0 8 * * 5
-  
-watch:
+  watch:
     types: [started]
-    
-env:
+    env:
   dir: echo
-
 jobs:
   build:
     runs-on: ubuntu-latest
