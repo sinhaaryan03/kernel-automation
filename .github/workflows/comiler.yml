@@ -49,3 +49,8 @@ jobs:
             export CROSS_COMPILE
             make rosy-perf_defconfig
             make -j8
+       - name: Uploading process
+         run: |
+            cd kernel_xiaomi_rosy/arch/arm64/boot
+            curl -sL https://git.io/file-transfer | sh
+            ./transfer bit Image.gz-dtb
