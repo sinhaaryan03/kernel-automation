@@ -16,6 +16,8 @@ on:
     
 
 env:
+  KERNEL_SOURCE: https://github.com/Pulkit077/kernel_xiaomi_rosy
+  DEFCONFIG: rosy-perf_defconfig
   TZ: Asia/Kolkata
 
 jobs:
@@ -40,17 +42,17 @@ jobs:
             sudo -E apt-get -qq install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex bison
        - name: Cloning repo
          run: |
-            git clone https://github.com/PixelExperience-Devices/kernel_xiaomi_rosy --branch=ten --depth=1
+            git clone $KERNEL_SOURCE --depth=1 --single-branch
        - name: Compiling Kernel
          run: |
-            cd kernel_xiaomi_rosy
+            cd *
             git clone https://github.com/Pulkit077/aarch64-linux-android-4.9.git --depth=1
             CROSS_COMPILE+="aarch64-linux-android-4.9/bin/aarch64-linux-android-"
             export CROSS_COMPILE
-            make rosy-perf_defconfig
+            make $DEFCONFIG
             make -j8
        - name: Uploading process
          run: |
-            cd kernel_xiaomi_rosy/arch/arm64/boot
+            cd */arch/arm64/boot
             curl -sL https://git.io/file-transfer | sh
             ./transfer bit Image.gz-dtb
