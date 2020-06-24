@@ -47,7 +47,7 @@ jobs:
             sudo -E apt-get -qq install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex bison
        - name: Cloning repo
          run: |
-            git clone $KERNEL_SOURCE --depth=1 --branch=$BRANCH
+            git clone --recurse-submodules $KERNEL_SOURCE --depth=1 --branch=$BRANCH
        - name: Compiling Kernel
          run: |
             cd $FOLDERNAME
