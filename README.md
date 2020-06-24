@@ -54,4 +54,5 @@ Contact us at our support chat [**here**](https://t.me/Area69Lab)
 
 Thanks to [**Pulkit**](https://www.github.com/Pulkit077) for helping me with everything
 
+Thanks to [**Jamie**](https://t.me/henloboi) for infinite help
 
