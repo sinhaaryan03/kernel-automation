@@ -16,9 +16,11 @@ on:
     
 
 env:
-  KERNEL_SOURCE: https://github.com/Pulkit077/kernel_xiaomi_rosy
+  KERNEL_SOURCE: https://github.com/mscalindt/xcg-rosy.git
+  BRANCH: q-3.18-caf
   DEFCONFIG: rosy-perf_defconfig
   TZ: Asia/Kolkata
+  MIR: bit
 
 jobs:
   build:
@@ -42,7 +44,7 @@ jobs:
             sudo -E apt-get -qq install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex bison
        - name: Cloning repo
          run: |
-            git clone $KERNEL_SOURCE --depth=1 --single-branch
+            git clone $KERNEL_SOURCE --depth=1 --branch=$BRANCH
        - name: Compiling Kernel
          run: |
             cd *
@@ -55,4 +57,4 @@ jobs:
          run: |
             cd */arch/arm64/boot
             curl -sL https://git.io/file-transfer | sh
-            ./transfer bit Image.gz-dtb
+            ./transfer $MIR Image.gz-dtb
