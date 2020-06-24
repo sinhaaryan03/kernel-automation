@@ -18,7 +18,7 @@ on:
 env:
   KERNEL_SOURCE: https://github.com/shivamjadon/Drona_Kernel_Rosy.git
   BRANCH: q-caf
-  DEFCONFIG: rosy-perf_defconfig
+  DEFCONFIG: drona-rosy_defconfig
   TZ: Asia/Kolkata
   MIR: bit
   FOLDERNAME: Drona_Kernel_Rosy
