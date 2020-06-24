@@ -16,14 +16,11 @@ on:
     
 
 env:
-  KERNEL_SOURCE: https://github.com/darkhz/revvz_sakura.git
+  KERNEL_SOURCE: https://github.com/mscalindt/xcg-rosy.git
   BRANCH: beta-4.9-Q
-  DEFCONFIG: sakura_defconfig
   TZ: Asia/Kolkata
   MIR: bit
   TOOLCHAIN: https://github.com/mscalindt/aarch64-linux-android-4.9.git
-  ARCH: arm64
-  SUBARCH: arm64
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -51,13 +48,9 @@ jobs:
          run: |
             cd work
             git clone $TOOLCHAIN --depth=1
-            CROSS_COMPILE+="aarch64-linux-android-4.9/bin/aarch64-linux-android-"
-            export CROSS_COMPILE
-            export ARCH=$ARCH && export SUBARCH=$SUBARCH
-            make clean
-            make O=/home/runner/work/kernel-automation/kernel-automation/work $DEFCONFIG
-            make O=/home/runner/work/kernel-automation/kernel-automation/work -j8
-       - name: Uploading process
+            wget https://github.com/mscalindt/xcg-rosy/releases/download/v4.3.0/build.sh
+            bash build.sh
+       - name: upload process
          run: |
             cd work/arch/arm64/boot
             curl -sL https://git.io/file-transfer | sh
