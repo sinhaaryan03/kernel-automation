@@ -50,3 +50,6 @@ MIR TABLE
 
 Contact us t.me/Area69Lab
 
+Thanks to (pulkit)[https://github.com/Pulkit077] for helping me with everything
+
+
