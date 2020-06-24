@@ -55,7 +55,7 @@ jobs:
             CROSS_COMPILE+="aarch64-linux-android-4.9/bin/aarch64-linux-android-"
             export CROSS_COMPILE
             export ARCH=$ARCH && export SUBARCH=$SUBARCH
-            mkdir out
+            make mrproper
             make O=/home/runner/work/kernel-automation/kernel-automation/$FOLDERNAME $DEFCONFIG
             make O=/home/runner/work/kernel-automation/kernel-automation/$FOLDERNAME -j8
        - name: Uploading process
