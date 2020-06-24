@@ -16,9 +16,9 @@ on:
     
 
 env:
-  KERNEL_SOURCE: https://github.com/darkhz/revvz_sakura.git
-  BRANCH: beta-4.9-Q
-  DEFCONFIG: sakura_defconfig
+  KERNEL_SOURCE: https://github.com/PixelExperience-Devices/kernel_xiaomi_rosy.git
+  BRANCH: ten
+  DEFCONFIG: rosy-perf_defconfig
   TZ: Asia/Kolkata
   MIR: bit
   TOOLCHAIN: https://github.com/mscalindt/aarch64-linux-android-4.9.git
