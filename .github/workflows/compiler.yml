@@ -17,7 +17,7 @@ on:
 
 env:
   KERNEL_SOURCE: https://github.com/mscalindt/xcg-rosy.git
-  BRANCH: q-caf
+  BRANCH: q-3.18-caf
   DEFCONFIG: xcg_defconfig
   TZ: Asia/Kolkata
   MIR: bit
