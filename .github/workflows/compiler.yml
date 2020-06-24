@@ -21,7 +21,7 @@ env:
   DEFCONFIG: xcg_defconfig
   TZ: Asia/Kolkata
   MIR: bit
-  FOLDERNAME: Drona_Kernel_Rosy
+  FOLDERNAME: xcg-rosy
   TOOLCHAIN: https://github.com/Pulkit077/aarch64-linux-android-4.9.git
   ARCH: arm64
   SUBARCH: arm64
