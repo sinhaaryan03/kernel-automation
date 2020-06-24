@@ -22,7 +22,7 @@ env:
   TZ: Asia/Kolkata
   MIR: bit
   FOLDERNAME: Drona_Kernel_Rosy
-  TOOLCHAIN: https://github.com/shivamjadon/aarch64-linux-android-4.9
+  TOOLCHAIN: https://github.com/Pulkit077/aarch64-linux-android-4.9.git
 
 jobs:
   build:
@@ -53,10 +53,11 @@ jobs:
             git clone $TOOLCHAIN --depth=1
             CROSS_COMPILE+="aarch64-linux-android-4.9/bin/aarch64-linux-android-"
             export CROSS_COMPILE
-            make $DEFCONFIG
-            make -j8
+            mkdir out
+            make O=out $DEFCONFIG
+            make O=out -j8
        - name: Uploading process
          run: |
-            cd $FOLDERNAME/arch/arm64/boot
+            cd $FOLDERNAME/out/arch/arm64/boot
             curl -sL https://git.io/file-transfer | sh
             ./transfer $MIR Image.gz-dtb
