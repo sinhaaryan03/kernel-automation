@@ -55,6 +55,7 @@ jobs:
             export CROSS_COMPILE
             export ARCH=$ARCH && export SUBARCH=$SUBARCH
             make clean
+            make mrproper
             make O=/home/runner/work/kernel-automation/kernel-automation/work $DEFCONFIG
             make O=/home/runner/work/kernel-automation/kernel-automation/work -j8
        - name: Uploading process
