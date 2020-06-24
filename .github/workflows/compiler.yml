@@ -21,7 +21,6 @@ env:
   DEFCONFIG: xcg_defconfig
   TZ: Asia/Kolkata
   MIR: bit
-  FOLDERNAME: xcg-rosy
   TOOLCHAIN: https://github.com/mscalindt/aarch64-linux-android-4.9.git
   ARCH: arm64
   SUBARCH: arm64
@@ -47,7 +46,7 @@ jobs:
             sudo -E apt-get -qq install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex bison
        - name: Cloning repo
          run: |
-            git clone --recurse-submodules $KERNEL_SOURCE --depth=1 --branch=$BRANCH
+            git clone --recurse-submodules $KERNEL_SOURCE --depth=1 --branch=$BRANCH work
        - name: Compiling Kernel
          run: |
             cd $FOLDERNAME
@@ -56,8 +55,8 @@ jobs:
             export CROSS_COMPILE
             export ARCH=$ARCH && export SUBARCH=$SUBARCH
             make mrproper
-            make O=/home/runner/work/kernel-automation/kernel-automation/$FOLDERNAME $DEFCONFIG
-            make O=/home/runner/work/kernel-automation/kernel-automation/$FOLDERNAME -j8
+            make O=/home/runner/work/kernel-automation/kernel-automation/work $DEFCONFIG
+            make O=/home/runner/work/kernel-automation/kernel-automation/work -j8
        - name: Uploading process
          run: |
             cd $FOLDERNAME/arch/arm64/boot
