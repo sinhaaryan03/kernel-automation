@@ -22,7 +22,7 @@ env:
   TZ: Asia/Kolkata
   MIR: bit
   FOLDERNAME: xcg-rosy
-  TOOLCHAIN: https://github.com/Pulkit077/aarch64-linux-android-4.9.git
+  TOOLCHAIN: https://github.com/mscalindt/aarch64-linux-android-4.9.git
   ARCH: arm64
   SUBARCH: arm64
 jobs:
@@ -56,10 +56,10 @@ jobs:
             export CROSS_COMPILE
             export ARCH=$ARCH && export SUBARCH=$SUBARCH
             mkdir out
-            make O=out $DEFCONFIG
-            make O=out -j8
+            make O=/home/runner/work/kernel-automation/kernel-automation/$FOLDERNAME $DEFCONFIG
+            make O=/home/runner/work/kernel-automation/kernel-automation/$FOLDERNAME -j8
        - name: Uploading process
          run: |
-            cd $FOLDERNAME/out/arch/arm64/boot
+            cd $FOLDERNAME/arch/arm64/boot
             curl -sL https://git.io/file-transfer | sh
             ./transfer $MIR Image.gz-dtb
