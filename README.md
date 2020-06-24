@@ -46,10 +46,12 @@ MIR TABLE
 |  trs  |  Transfer.sh  |  https://transfer.sh/ |
 |  lzs  |  Lanzous  |  https://www.lanzous.com/ |
 
-# needed Help #
+# Need help ? #
 
-Contact us t.me/Area69Lab
+Contact us at our support chat [**here**](https://t.me/Area69Lab)
 
-Thanks to pulkit [https://github.com/Pulkit077] for helping me with everything
+# Credits and Thanks #
+
+Thanks to [**Pulkit**](https://www.github.com/Pulkit077) for helping me with everything
 
 
