@@ -22,6 +22,7 @@ env:
   TZ: Asia/Kolkata
   MIR: bit
   FOLDERNAME: Drona_Kernel_Rosy
+  TOOLCHAIN: https://github.com/shivamjadon/aarch64-linux-android-4.9
 
 jobs:
   build:
@@ -49,7 +50,7 @@ jobs:
        - name: Compiling Kernel
          run: |
             cd $FOLDERNAME
-            git clone https://github.com/Pulkit077/aarch64-linux-android-4.9.git --depth=1
+            git clone $TOOLCHAIN --depth=1
             CROSS_COMPILE+="aarch64-linux-android-4.9/bin/aarch64-linux-android-"
             export CROSS_COMPILE
             make $DEFCONFIG
