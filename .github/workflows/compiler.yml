@@ -49,7 +49,7 @@ jobs:
             git clone --recurse-submodules $KERNEL_SOURCE --depth=1 --branch=$BRANCH work
        - name: Compiling Kernel
          run: |
-            cd $FOLDERNAME
+            cd work
             git clone $TOOLCHAIN --depth=1
             CROSS_COMPILE+="aarch64-linux-android-4.9/bin/aarch64-linux-android-"
             export CROSS_COMPILE
@@ -59,6 +59,6 @@ jobs:
             make O=/home/runner/work/kernel-automation/kernel-automation/work -j8
        - name: Uploading process
          run: |
-            cd $FOLDERNAME/arch/arm64/boot
+            cd work/arch/arm64/boot
             curl -sL https://git.io/file-transfer | sh
             ./transfer $MIR Image.gz-dtb
