@@ -16,9 +16,9 @@ on:
     
 
 env:
-  KERNEL_SOURCE: https://github.com/shivamjadon/Drona_Kernel_Rosy.git
+  KERNEL_SOURCE: https://github.com/mscalindt/xcg-rosy.git
   BRANCH: q-caf
-  DEFCONFIG: drona-rosy_defconfig
+  DEFCONFIG: xcg_defconfig
   TZ: Asia/Kolkata
   MIR: bit
   FOLDERNAME: Drona_Kernel_Rosy
