@@ -16,9 +16,9 @@ on:
     
 
 env:
-  KERNEL_SOURCE: https://github.com/mscalindt/xcg-rosy.git
-  BRANCH: q-3.18-caf
-  DEFCONFIG: xcg_defconfig
+  KERNEL_SOURCE: https://github.com/shivamjadon/Drona_Kernel_Rosy.git
+  BRANCH: q-caf
+  DEFCONFIG: drona-rosy_defconfig
   TZ: Asia/Kolkata
   MIR: bit
   TOOLCHAIN: https://github.com/mscalindt/aarch64-linux-android-4.9.git
