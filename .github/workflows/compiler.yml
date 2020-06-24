@@ -23,7 +23,8 @@ env:
   MIR: bit
   FOLDERNAME: Drona_Kernel_Rosy
   TOOLCHAIN: https://github.com/Pulkit077/aarch64-linux-android-4.9.git
-
+  ARCH: arm64
+  SUBARCH: arm64
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -53,6 +54,7 @@ jobs:
             git clone $TOOLCHAIN --depth=1
             CROSS_COMPILE+="aarch64-linux-android-4.9/bin/aarch64-linux-android-"
             export CROSS_COMPILE
+            export ARCH=$ARCH && export SUBARCH=$SUBARCH
             mkdir out
             make O=out $DEFCONFIG
             make O=out -j8
