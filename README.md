@@ -1,5 +1,7 @@
 # Kernel Automation #
 
+![compiling kernel](https://github.com/Area69Lab/kernel-automation/workflows/compiling%20kernel/badge.svg)
+
 What is this ?
 
 This is a Automatic kernel builder, which is totally online. No need for PCs anymore.
