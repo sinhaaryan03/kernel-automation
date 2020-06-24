@@ -36,14 +36,14 @@ jobs:
          run: |
            docker rmi `docker images -q`
            sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d
-           sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php* ccache
+           sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php* 
            sudo -E apt-get update
            sudo -E apt-get -y autoremove --purge
            sudo -E apt-get clean 
        - name: Initializing environment
          run: |
             sudo -E apt-get -qq update
-            sudo -E apt-get -qq install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex bison
+            sudo -E apt-get -qq install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex bison ccache
        - name: Cloning repo
          run: |
             git clone --recurse-submodules $KERNEL_SOURCE --depth=1 --branch=$BRANCH work
