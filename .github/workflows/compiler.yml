@@ -17,7 +17,7 @@ on:
 
 env:
   KERNEL_SOURCE: https://github.com/mscalindt/xcg-rosy.git
-  BRANCH: beta-4.9-Q
+  BRANCH: q-3.18-caf
   TZ: Asia/Kolkata
   MIR: bit
   TOOLCHAIN: https://github.com/mscalindt/aarch64-linux-android-4.9.git
