@@ -16,12 +16,12 @@ on:
     
 
 env:
-  KERNEL_SOURCE: https://github.com/techyminati/minati_kernel_RMX1831.git
+  KERNEL_SOURCE: https://github.com/realme-kernel-opensource/realmeC11_realmeC12_realmeC15_AndroidQ-kernel-source.git
   BRANCH: stock-rebase
-  DEFCONFIG: oppo6771_18611_defconfig
+  DEFCONFIG: oppo6765_debug_defconfig
   TZ: Asia/Kolkata
   MIR: wet
-  TOOLCHAIN: https://gitlab.com/Baibhab34/aarch64-linux-android-4.9.git
+  TOOLCHAIN: https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9
   ARCH: arm64
   SUBARCH: arm64
 jobs:
@@ -46,7 +46,7 @@ jobs:
             sudo -E apt-get -qq install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex bison ccache
        - name: Cloning repo
          run: |
-            git clone --recurse-submodules $KERNEL_SOURCE --depth=1 --branch=$BRANCH work
+            git clone --recurse-submodules $KERNEL_SOURCE --depth=1 work
        - name: Compiling Kernel
          run: |
             cd work
