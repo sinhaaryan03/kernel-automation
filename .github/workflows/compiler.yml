@@ -18,7 +18,7 @@ on:
 env:
   KERNEL_SOURCE: https://github.com/realme-kernel-opensource/realmeC11_realmeC12_realmeC15_AndroidQ-kernel-source.git
   BRANCH: stock-rebase
-  DEFCONFIG: oppo6765_debug_defconfig
+  DEFCONFIG: oppo6765_defconfig
   TZ: Asia/Kolkata
   MIR: wet
   TOOLCHAIN: https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9
